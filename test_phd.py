@@ -234,7 +234,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 
 train_g = train_g.to(device=device)
-# dgi = dgi.to(device=device)
+dgi = dgi.to(device=device)
 
 import os
 import sys
@@ -267,7 +267,8 @@ def demo_basic():
 
     # create model and move it to GPU with id rank
     device_id = rank % torch.cuda.device_count()
-    ddp_dgi = DDP(dgi, device_ids=[device_id])
+    # ddp_dgi = DDP(dgi, device_ids=[device_id])
+    ddp_dgi = DDP(dgi, device_ids=[0])
     dgi_optimizer = torch.optim.Adam(ddp_dgi.parameters(),
                 lr=1e-3,
                 weight_decay=0.)
