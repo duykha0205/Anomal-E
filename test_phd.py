@@ -234,7 +234,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 
 train_g = train_g.to(device=device)
-dgi = dgi.to(device=device)
+# dgi = dgi.to(device=device)
 
 import os
 import sys
