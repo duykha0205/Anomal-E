@@ -256,10 +256,10 @@ node_features = train_g.ndata['h']
 edge_features = train_g.edata['h']
 
 def demo_basic():
-    os.environ['MASTER_ADDR'] = 'localhost'
-    os.environ['MASTER_PORT'] = '29444'
-    os.environ['RANK'] = '0'
-    os.environ['WORLD_SIZE'] = '2' 
+    # os.environ['MASTER_ADDR'] = 'localhost'
+    # os.environ['MASTER_PORT'] = '29444'
+    # os.environ['RANK'] = '0'
+    # os.environ['WORLD_SIZE'] = '2' 
     dist.init_process_group("nccl")
     rank = dist.get_rank()
 #     rank = 0
